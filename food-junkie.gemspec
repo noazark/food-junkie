@@ -16,5 +16,8 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
+  gem.add_dependency "ruby-units", "1.4.1"
+  gem.add_dependency "treetop", "1.4.10"
+
   gem.add_development_dependency "rspec"
 end
