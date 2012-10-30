@@ -1,0 +1,40 @@
+module FoodJunkie
+  grammar CookSteps
+    include Primitives
+    include Measurements
+    include Units
+
+    rule cook_step
+      utensil / preheat / cook / serving_size
+    end
+
+    rule preheat
+      'pre'? 'heat' (space 'the')? space word space preposition space temperature <FoodJunkie::CookStep>
+    end
+
+    rule utensil
+      (area / distance) space word
+    end
+
+    rule cook
+      (word space preposition space)? temperature space conjunction space time <FoodJunkie::CookStep>
+    end
+
+    rule serving_size
+      number space serving_unit
+      /
+      'makes' space number (space word)?
+    end
+
+    rule preparation
+      'minced' /
+      'diced' /
+      'cubed' /
+      'sliced' /
+      'shredded' /
+      'browned' /
+      'beaten'
+    end
+
+  end
+end

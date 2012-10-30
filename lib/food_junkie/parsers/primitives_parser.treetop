@@ -1,0 +1,132 @@
+module FoodJunkie
+  grammar Primitives
+
+    rule primitives
+      number / word / punctuation / line_break / space
+    end
+
+    ##################
+    # Numerals
+
+    rule number
+      fraction / float / integer / alphabetical_number
+    end
+    
+    rule number_literal
+      fraction / float / integer
+    end
+
+    rule denary_digit
+      [0-9]
+    end
+
+    rule integer
+      ('+' / '-')? denary_digit+
+    end
+
+    rule float
+      ('+' / '-')? (denary_digit+)? '.' denary_digit+
+    end
+
+    rule fraction
+      ((integer space) / ('+' / '-'))? denary_digit+ '/' [1-9]+
+    end
+
+    rule alphabetical_number
+      (
+        alphabetical_number_thousands /
+        alphabetical_number_hundreds /
+        alphabetical_number_tens /
+        alphabetical_number_teens /
+        alphabetical_number_ones /
+        space alphabetical_number
+      )+
+    end
+
+    rule alphabetical_number_ones
+      (
+        'zero' / 'one' / 'two' / 'three' / 'four' /
+        'five' / 'six' / 'seven' / 'eight'/ 'nine'
+      ) (
+        '-' / space
+        alphabetical_number
+      )?
+    end
+
+    rule alphabetical_number_teens
+      (
+        'eleven'/ 'twelve'/ 'thirteen'/ 'fourteen'/ 'fifteen'/ 'sixteen'/
+        'seventeen'/ 'eighteen'/ 'nineteen'
+      ) (
+        '-' / space
+        alphabetical_number
+      )?
+    end
+
+    rule alphabetical_number_tens
+      (
+        'ten' / 'twenty' / 'thirty' / 'fourty' / 'fifty' / 'sixty' / 'seventy' /
+        'eighty' / 'ninety'
+      ) (
+        '-' / space
+        alphabetical_number
+      )?
+    end
+
+    rule alphabetical_number_hundreds
+      'hundred'
+    end
+
+    rule alphabetical_number_thousands
+      'thousand'
+    end
+    
+    ##################
+    # Strings
+
+    rule word
+      [a-zA-Z\-\']+
+    end
+
+    rule conjunction
+      ('if' / 'and' / 'or' / 'yet' / 'for' / 'nor' / 'so' / 'while')
+    end
+
+    rule preposition
+      ("aboard" / "about" / "above" / "across" / "after" / "against" / "along" /
+       "amid" / "among" / "anti" / "around" / "as" / "at" / "before" /
+       "behind" / "below" / "beneath" / "beside" / "besides" / "between" /
+       "beyond" / "but" / "by" / "concerning" / "considering" / "despite" /
+       "down" / "during" / "except" / "excepting" / "excluding" / "following" /
+       "for" / "from" / "into" / "inside" / "in" / "like" / "minus" / "near" /
+       "of" / "off" / "onto" / "on" / "opposite" / "outside" / "over" / "past" /
+       "per" / "plus" / "regarding" / "round" / "save" / "since" / "than" /
+       "through" / "towards" / "toward" / "to" / "under" / "underneath" /
+       "unlike" / "until" / "upon" / "up" / "versus" / "via" / "with" /
+       "within" / "without")
+    end
+
+    ##################
+    # Punctuation
+
+    rule punctuation
+      [\/.,:;?!@$&%'"()]+
+    end
+
+    rule terminators
+      [.,:;?!&%()]+
+    end
+
+    ##################
+    # Whitespace
+
+    rule space
+      [\ ]+
+    end
+
+    rule line_break
+      space? ([\r\n]) space?
+    end
+
+  end
+end

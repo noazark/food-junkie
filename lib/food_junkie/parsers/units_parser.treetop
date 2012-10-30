@@ -1,0 +1,270 @@
+module FoodJunkie
+  grammar Units
+    include Primitives
+
+    rule unit
+      portion_unit / ( distance_unit / temperature_unit / time_unit / volume_unit )* <FoodJunkie::Unit>
+    end
+
+    ##################
+    # Time
+
+    rule time_unit
+      year / month / week / day / hour / minute / second
+    end
+
+    rule year
+      ('years' / 'year')
+      &(space / terminators / !.)
+    end
+
+    rule month
+      ('months' / 'month')
+      &(space / terminators / !.)
+    end
+
+    rule week
+      ('weeks' / 'week')
+      &(space / terminators / !.)
+    end
+
+    rule day
+      ('days' / 'day')
+      &(space / terminators / !.)
+    end
+
+    rule hour
+      ('hours' / 'hour' / 'hr')
+      &(space / terminators / !.)
+    end
+
+    rule minute
+      ('minutes' / 'minute' / 'min')
+      &(space / terminators / !.)
+    end
+
+    rule second
+      ('seconds' / 'second' / 'sec')
+      &(space / terminators / !.)
+    end
+
+    ##################
+    # distance
+
+    rule distance_unit
+      foot / inch / meter / centimeter / millimeter
+    end
+
+    rule foot
+      ('feet' / 'foot' / 'ft' / '\'')
+      &(space / terminators / !.)
+    end
+
+    rule inch
+      ('inches' / 'inch' / 'in' / '"')
+      &(space / terminators / !.)
+    end
+
+    rule meter
+      ('meters' / 'meter')
+      &(space / terminators / !.)
+    end
+
+    rule centimeter
+      ('centimeters' / 'centimeter' / 'cm')
+      &(space / terminators / !.)
+    end
+
+    rule millimeter
+      ('millimeters' / 'millimeter' / 'mm')
+      &(space / terminators / !.)
+    end
+
+    ##################
+    # Temperature
+
+    rule temperature_unit
+      degree space ( fahrenheit / celcius )
+      /
+      degree / fahrenheit / celcius
+    end
+
+    rule relative_temperature
+      'boiling' /
+      'hot' /
+      'warm' /
+      'lukewarm' /
+      'chilled' /
+      'cold' /
+      'cool'
+    end
+
+    rule degree
+      ('degrees' / 'degree' / 'deg')
+      &(space / terminators / !.)
+    end
+
+    rule fahrenheit
+      ('fahrenheit' / 'F')
+      &(space / terminators / !.)
+    end
+
+    rule celcius
+      ('celcius' / 'C')
+      &(space / terminators / !.)
+    end
+
+    ##################
+    # Volume
+
+    rule volume_unit
+      smidgen / pinch / teaspoon / tablespoon / ounce / pound / cup / pint / quart / gallon / gram
+    end
+
+    rule smidgen
+      ('smidgens' / 'smidgen')
+      &(space / terminators / !.)
+    end
+
+    rule pinch
+      ('pinches' / 'pinch' / 'pn')
+      &(space / terminators / !.)
+    end
+
+    rule teaspoon
+      ('teaspoons' / 'teaspoon' / 'tsp')
+      &(space / terminators / !.)
+    end
+
+    rule tablespoon
+      ('tablespoons' / 'tablespoon' / 'tbsp')
+      &(space / terminators / !.)
+    end
+
+    rule gram
+      ('grams' / 'gram' / 'g')
+      &(space / terminators / !.)
+    end
+
+    rule ounce
+      ('ounces' / 'ounce' / 'oz')
+      &(space / terminators / !.)
+    end
+
+    rule pound
+      ('pounds' / 'pound' / 'lbs' / 'lb')
+      &(space / terminators / !.)
+    end
+
+    rule cup
+      ('cups' / 'cup' / 'c')
+      &(space / terminators / !.)
+    end
+
+    rule pint
+      ('pints' / 'pint' / 'pt')
+      &(space / terminators / !.)
+    end
+
+    rule quart
+      ('quarts' / 'quart' / 'qt')
+      &(space / terminators / !.)
+    end
+
+    rule gallon
+      ('gallons' / 'gallon' / 'gal')
+      &(space / terminators / !.)
+    end
+
+    ##################
+    # Non Definitive
+    #
+    # Units where the literal proportion cannot be defined, although is
+    # typically assumed or accepted.
+
+    rule non_definitive_unit
+      batch / time_measurement / cupful / equal
+    end
+
+    rule batch
+      'batches' / 'batch'
+    end
+
+    rule time_measurement
+      'times' / 'time'
+    end
+
+    rule cupful
+      'cupfuls' / 'cupful'
+    end
+
+    rule equal
+      'equals'/ 'equal'
+    end
+
+    ##################
+    # Portion
+
+    rule portion_unit
+      pod / slice / roll / box / can / container / piece
+    end
+
+    rule slice
+      ('slices'/ 'slice')
+      &(space / terminators / !.)
+    end
+
+    rule roll
+      ('rolls'/ 'roll')
+      &(space / terminators / !.)
+    end
+
+    rule box
+      ('boxes'/ 'box')
+      &(space / terminators / !.)
+    end
+
+    rule piece
+      ('pieces'/ 'piece')
+      &(space / terminators / !.)
+    end
+
+    rule can
+      ('cans'/ 'can')
+      &(space / terminators / !.)
+    end
+
+    rule container
+      ('containers'/ 'container')
+      &(space / terminators / !.)
+    end
+
+    rule pod
+      ('pods'/ 'pod')
+      &(space / terminators / !.)
+    end
+
+    ##################
+    # Serving
+
+    rule serving_unit
+      portion / helping / serving
+    end
+
+    rule portion
+      ('portions' / 'portion')
+      &(space / terminators / !.)
+    end
+
+    rule helping
+      ('helpings' / 'helping')
+      &(space / terminators / !.)
+    end
+
+    rule serving
+      ('servings' / 'serving')
+      &(space / terminators / !.)
+    end
+
+  end
+end

@@ -1,0 +1,20 @@
+module FoodJunkie
+  grammar Recipes
+    include Primitives
+    include CookSteps
+    include Ingredients
+
+    rule recipe
+      paragraph* <FoodJunkie::Recipe>
+    end
+
+    rule paragraph
+      step (line_break+ / !.) <FoodJunkie::Paragraph>
+    end
+
+    rule step
+      ( cook_step / non_definitive_measurement / time / ingredient / number / word / punctuation / space )+ <FoodJunkie::Step>
+    end
+
+  end
+end
