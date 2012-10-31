@@ -1,7 +1,7 @@
 module FoodJunkie
   module Parsers
-    grammar Units
-      include Primitives
+    grammar Unit
+      include Primitive
 
       rule unit
         portion_unit / ( distance_unit / temperature_unit / time_unit / volume_unit )* <FoodJunkie::SyntaxNodes::Unit>

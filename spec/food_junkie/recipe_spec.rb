@@ -12,7 +12,7 @@ describe FoodJunkie::Recipe do
 
   let(:recipe) do
     FoodJunkie::Recipe.new(
-      FoodJunkie::Parsers::RecipesParser.new.parse(recipe_string.to_s)
+      FoodJunkie::Parsers::RecipeParser.new.parse(recipe_string.to_s)
     )
   end
 

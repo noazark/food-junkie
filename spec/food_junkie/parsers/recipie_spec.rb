@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe FoodJunkie::Parsers::RecipesParser do
+describe FoodJunkie::Parsers::Recipe do
   before :all do
-    @parser = FoodJunkie::Parsers::RecipesParser.new
+    @parser = FoodJunkie::Parsers::RecipeParser.new
 
     @recipe = "Preheat oven to 350 degrees. Lightly grease a baking dish.
       

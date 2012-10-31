@@ -1,8 +1,8 @@
 module FoodJunkie
   module Parsers
-    grammar Measurements
-      include Primitives
-      include Units
+    grammar Measurement
+      include Primitive
+      include Unit
 
       rule measurement
         compound / area / distance / time / temperature / non_definitive_measurement / portion_volume / volume

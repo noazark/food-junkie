@@ -3,7 +3,7 @@ module FoodJunkie
     def initialize(step)
       case step
       when String
-        @syntax_node = Parsers::RecipesParser.new.parse(step).steps.first
+        @syntax_node = Parsers::RecipeParser.new.parse(step).steps.first
       when FoodJunkie::SyntaxNodes::Step
         @syntax_node = step
       end

@@ -1,9 +1,9 @@
 module FoodJunkie
   module Parsers
-    grammar CookSteps
-      include Primitives
-      include Measurements
-      include Units
+    grammar CookStep
+      include Primitive
+      include Measurement
+      include Unit
 
       rule cook_step
         utensil / preheat / cook / serving_size

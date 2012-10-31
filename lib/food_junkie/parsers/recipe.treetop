@@ -1,9 +1,9 @@
 module FoodJunkie
   module Parsers
-    grammar Recipes
-      include Primitives
-      include CookSteps
-      include Ingredients
+    grammar Recipe
+      include Primitive
+      include CookStep
+      include Ingredient
 
       rule recipe
         paragraph* <FoodJunkie::SyntaxNodes::Recipe>

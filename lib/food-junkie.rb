@@ -16,12 +16,12 @@ require "food_junkie/syntax_nodes/unit"
 require "food_junkie/syntax_nodes/volume"
 require "food_junkie/syntax_nodes/volume_range"
 
-require "food_junkie/parsers/primitives_parser"
-require "food_junkie/parsers/units_parser"
-require "food_junkie/parsers/measurements_parser"
-require "food_junkie/parsers/cook_steps_parser"
-require "food_junkie/parsers/ingredients_parser"
-require "food_junkie/parsers/recipes_parser"
+require "food_junkie/parsers/primitive"
+require "food_junkie/parsers/unit"
+require "food_junkie/parsers/measurement"
+require "food_junkie/parsers/cook_step"
+require "food_junkie/parsers/ingredient"
+require "food_junkie/parsers/recipe"
 
 require 'food_junkie/parser'
 require 'food_junkie/recipe'

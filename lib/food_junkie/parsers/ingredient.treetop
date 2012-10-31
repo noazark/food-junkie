@@ -1,9 +1,9 @@
 module FoodJunkie
   module Parsers
-    grammar Ingredients
-      include Primitives
-      include Measurements
-      include CookSteps
+    grammar Ingredient
+      include Primitive
+      include Measurement
+      include CookStep
 
       rule ingredient
         measurement:(compound / portion_volume / volume) (space 'of')? (space preparation)? (space relative_temperature)? space substance:(!((space preposition space) / (space conjunction space) / terminal) .)+ <FoodJunkie::SyntaxNodes::Ingredient>

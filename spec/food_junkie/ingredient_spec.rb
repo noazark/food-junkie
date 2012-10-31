@@ -8,7 +8,7 @@ describe FoodJunkie::Ingredient do
 
   let(:ingredient) do
     FoodJunkie::Ingredient.new(
-      FoodJunkie::Parsers::IngredientsParser.new.parse(ingredient_string.to_s)
+      FoodJunkie::Parsers::IngredientParser.new.parse(ingredient_string.to_s)
     )
   end
 

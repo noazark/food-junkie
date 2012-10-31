@@ -6,9 +6,9 @@ module FoodJunkie
   class SyntaxNodes::Time; end
 end
 
-describe FoodJunkie::Parsers::CookStepsParser do
+describe FoodJunkie::Parsers::CookStep do
   before :all do
-    @parser = FoodJunkie::Parsers::CookStepsParser.new
+    @parser = FoodJunkie::Parsers::CookStepParser.new
   end
   
   def parse(string)

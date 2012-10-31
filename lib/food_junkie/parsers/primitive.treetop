@@ -1,6 +1,6 @@
 module FoodJunkie
   module Parsers
-    grammar Primitives
+    grammar Primitive
 
       rule primitives
         number / word / punctuation / line_break / space

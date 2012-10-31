@@ -10,7 +10,7 @@ describe FoodJunkie::Step do
 
   let(:step) do
     FoodJunkie::Step.new(
-      FoodJunkie::Parsers::RecipesParser.new.parse(step_string.to_s).steps.first
+      FoodJunkie::Parsers::RecipeParser.new.parse(step_string.to_s).steps.first
     )
   end
 
