@@ -1,4 +1,6 @@
 module FoodJunkie
-  class VolumeRange < SyntaxNode
+  module SyntaxNode
+    class VolumeRange < Base
+    end
   end
 end

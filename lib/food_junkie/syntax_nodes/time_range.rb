@@ -1,4 +1,6 @@
 module FoodJunkie
-  class TimeRange < SyntaxNode
+  module SyntaxNode
+    class TimeRange < Base
+    end
   end
 end

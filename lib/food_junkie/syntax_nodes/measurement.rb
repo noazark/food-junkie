@@ -1,4 +1,6 @@
 module FoodJunkie
-  class Measurement < SyntaxNode
+  module SyntaxNode
+    class Measurement < Base
+    end
   end
 end

@@ -1,4 +1,6 @@
 module FoodJunkie
-  class Step < SyntaxNode
+  module SyntaxNode
+    class Step < Base
+    end
   end
 end

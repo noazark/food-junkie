@@ -1,4 +1,6 @@
 module FoodJunkie
-  class Paragraph < SyntaxNode
+  module SyntaxNode
+    class Paragraph < Base
+    end
   end
 end

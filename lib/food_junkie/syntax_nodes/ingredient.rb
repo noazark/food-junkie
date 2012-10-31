@@ -1,4 +1,6 @@
 module FoodJunkie
-  class Ingredient < SyntaxNode
+  module SyntaxNode
+    class Ingredient < Base
+    end
   end
 end
