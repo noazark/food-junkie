@@ -23,7 +23,6 @@ require "food_junkie/parsers/cook_step"
 require "food_junkie/parsers/ingredient"
 require "food_junkie/parsers/recipe"
 
-require 'food_junkie/parser'
 require 'food_junkie/recipe'
 require 'food_junkie/step'
 require 'food_junkie/ingredient'
