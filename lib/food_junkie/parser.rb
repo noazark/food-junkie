@@ -14,17 +14,9 @@ module FoodJunkie
       end
       
       # clean up the tree by removing all nodes of default type 'SyntaxNode'
-      #self.clean_tree(tree)
+      tree.clean!
       
       return tree
-    end
-
-  private
-
-    def self.clean_tree(root_node)
-      return if(root_node.elements.nil?)
-      root_node.elements.delete_if{|node| node.class.name == "FoodJunkie::SyntaxNode" }
-      root_node.elements.each {|node| self.clean_tree(node) }
     end
 
   end

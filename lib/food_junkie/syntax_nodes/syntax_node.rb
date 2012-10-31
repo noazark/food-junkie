@@ -14,7 +14,7 @@ module FoodJunkie
             end
           end
 
-          found << self if self.class.name == klass.name.to_s
+          found << self if self.class == klass
         end
 
         return @children[klass] ||= found
@@ -26,6 +26,12 @@ module FoodJunkie
 
       def to_s
         text_value.to_s
+      end
+
+      def clean!
+        return if(self.elements.nil?)
+        self.elements.delete_if{|node| node.class.name == "Treetop::Runtime::SyntaxNode" }
+        self.elements.each {|node| node.clean!}
       end
 
     end
