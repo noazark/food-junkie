@@ -1,7 +1,7 @@
 require 'ruby-units'
 require 'treetop'
 
-require "food_junkie/syntax_nodes/syntax_node"
+require "food_junkie/syntax_nodes/base"
 require "food_junkie/syntax_nodes/cook_step"
 require "food_junkie/syntax_nodes/distance_range"
 require "food_junkie/syntax_nodes/ingredient"
