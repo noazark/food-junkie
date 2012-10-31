@@ -1,4 +1,6 @@
 module FoodJunkie
-  class DistanceRange < SyntaxNode
+  module SyntaxNodes
+    class DistanceRange < Base
+    end
   end
 end

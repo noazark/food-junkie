@@ -1,0 +1,22 @@
+module FoodJunkie
+  module Parsers
+    grammar Recipe
+      include Primitive
+      include CookStep
+      include Ingredient
+
+      rule recipe
+        paragraph* <FoodJunkie::SyntaxNodes::Recipe>
+      end
+
+      rule paragraph
+        step (line_break+ / !.) <FoodJunkie::SyntaxNodes::Paragraph>
+      end
+
+      rule step
+        ( cook_step / non_definitive_measurement / time / ingredient / number / word / punctuation / space )+ <FoodJunkie::SyntaxNodes::Step>
+      end
+
+    end
+  end
+end

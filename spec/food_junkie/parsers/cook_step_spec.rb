@@ -1,14 +1,14 @@
 require 'spec_helper'
 
 module FoodJunkie
-  class CookStep; end
-  class Temperature; end
-  class Time; end
+  class SyntaxNodes::CookStep; end
+  class SyntaxNodes::Temperature; end
+  class SyntaxNodes::Time; end
 end
 
-describe FoodJunkie::CookStepsParser do
+describe FoodJunkie::Parsers::CookStep do
   before :all do
-    @parser = FoodJunkie::CookStepsParser.new
+    @parser = FoodJunkie::Parsers::CookStepParser.new
   end
   
   def parse(string)

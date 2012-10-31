@@ -1,0 +1,22 @@
+module FoodJunkie
+  module Parsers
+    grammar Ingredient
+      include Primitive
+      include Measurement
+      include CookStep
+
+      rule ingredient
+        measurement:(compound / portion_volume / volume) (space 'of')? (space preparation)? (space relative_temperature)? space substance:substance <FoodJunkie::SyntaxNodes::Ingredient>
+      end
+
+      rule substance
+        (!((space preposition space) / (space conjunction space) / terminal) .)+ <FoodJunkie::SyntaxNodes::Substance>
+      end
+
+      rule terminal
+        line_break+ / terminators
+      end
+
+    end
+  end
+end

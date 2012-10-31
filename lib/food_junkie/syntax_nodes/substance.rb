@@ -1,6 +1,6 @@
 module FoodJunkie
   module SyntaxNodes
-    class Ingredient < Base
+    class Substance < Base
     end
   end
 end

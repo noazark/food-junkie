@@ -1,0 +1,57 @@
+module FoodJunkie
+  module Parsers
+    grammar Measurement
+      include Primitive
+      include Unit
+
+      rule measurement
+        compound / area / distance / time / temperature / non_definitive_measurement / portion_volume / volume
+      end
+
+      rule time
+        number_literal (space? ('to' / '-')) space? time <FoodJunkie::SyntaxNodes::TimeRange>
+        /
+        number_literal space? time_unit <FoodJunkie::SyntaxNodes::Time>
+      end
+
+      rule temperature
+        number space? temperature_unit <FoodJunkie::SyntaxNodes::Temperature>
+      end
+
+      rule distance
+        number (space? ('to' / '-')) space? distance <FoodJunkie::SyntaxNodes::DistanceRange>
+        /
+        number space? distance_unit
+      end
+
+      rule area
+        (number space? ('x' / 'by') space? number) space? distance_unit
+      end
+
+      rule non_definitive_measurement
+        alphabetical_number space non_definitive_unit
+        /
+        number_literal space non_definitive_unit
+      end
+
+      rule volume
+        number (space? ('to' / '-')) space? volume <FoodJunkie::SyntaxNodes::VolumeRange>
+        /
+        alphabetical_number (space? volume_unit)? <FoodJunkie::SyntaxNodes::Volume>
+        /
+        number_literal (space? volume_unit)? <FoodJunkie::SyntaxNodes::Volume>
+      end
+
+      rule portion_volume
+        alphabetical_number space portion_unit <FoodJunkie::SyntaxNodes::Volume>
+        /
+        number_literal space? portion_unit <FoodJunkie::SyntaxNodes::Volume>
+      end
+
+      rule compound
+        number (space measurement)? space portion_unit
+      end
+
+    end
+  end
+end
