@@ -14,11 +14,15 @@ module FoodJunkie
     end
 
     def steps
-      syntax_node.children(FoodJunkie::SyntaxNodes::Step)
+      syntax_node.children(FoodJunkie::SyntaxNodes::Step).map do |step|
+        FoodJunkie::Step.new step
+      end
     end
 
     def ingredients
-      syntax_node.children(FoodJunkie::SyntaxNodes::Ingredient)
+      syntax_node.children(FoodJunkie::SyntaxNodes::Ingredient).map do |ingredient|
+        FoodJunkie::Ingredient.new ingredient
+      end
     end
 
     def total_time

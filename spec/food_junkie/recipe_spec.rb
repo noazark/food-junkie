@@ -25,8 +25,20 @@ describe FoodJunkie::Recipe do
     recipe.steps.count.should eq 2
   end
 
+  it "steps are of type Step" do
+    recipe.steps.each do |step|
+      step.should be_kind_of FoodJunkie::Step
+    end
+  end
+
   it "extrapolates ingredients" do
     recipe.ingredients.count.should eq 2
+  end
+
+  it "ingredients are of type Ingredient" do
+    recipe.ingredients.each do |ingredient|
+      ingredient.should be_kind_of FoodJunkie::Ingredient
+    end
   end
 
   it "summarizes the recipe's total cook and prep time" do
