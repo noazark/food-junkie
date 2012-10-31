@@ -6,7 +6,11 @@ module FoodJunkie
       include CookStep
 
       rule ingredient
-        measurement:(compound / portion_volume / volume) (space 'of')? (space preparation)? (space relative_temperature)? space substance:(!((space preposition space) / (space conjunction space) / terminal) .)+ <FoodJunkie::SyntaxNodes::Ingredient>
+        measurement:(compound / portion_volume / volume) (space 'of')? (space preparation)? (space relative_temperature)? space substance:substance <FoodJunkie::SyntaxNodes::Ingredient>
+      end
+
+      rule substance
+        (!((space preposition space) / (space conjunction space) / terminal) .)+ <FoodJunkie::SyntaxNodes::Substance>
       end
 
       rule terminal
