@@ -9,17 +9,17 @@ module FoodJunkie
       end
 
       rule time
-        number_literal (space? ('to' / '-')) space? time <FoodJunkie::SyntaxNode::TimeRange>
+        number_literal (space? ('to' / '-')) space? time <FoodJunkie::SyntaxNodes::TimeRange>
         /
-        number_literal space? time_unit <FoodJunkie::SyntaxNode::Time>
+        number_literal space? time_unit <FoodJunkie::SyntaxNodes::Time>
       end
 
       rule temperature
-        number space? temperature_unit <FoodJunkie::SyntaxNode::Temperature>
+        number space? temperature_unit <FoodJunkie::SyntaxNodes::Temperature>
       end
 
       rule distance
-        number (space? ('to' / '-')) space? distance <FoodJunkie::SyntaxNode::DistanceRange>
+        number (space? ('to' / '-')) space? distance <FoodJunkie::SyntaxNodes::DistanceRange>
         /
         number space? distance_unit
       end
@@ -35,17 +35,17 @@ module FoodJunkie
       end
 
       rule volume
-        number (space? ('to' / '-')) space? volume <FoodJunkie::SyntaxNode::VolumeRange>
+        number (space? ('to' / '-')) space? volume <FoodJunkie::SyntaxNodes::VolumeRange>
         /
-        alphabetical_number (space? volume_unit)? <FoodJunkie::SyntaxNode::Volume>
+        alphabetical_number (space? volume_unit)? <FoodJunkie::SyntaxNodes::Volume>
         /
-        number_literal (space? volume_unit)? <FoodJunkie::SyntaxNode::Volume>
+        number_literal (space? volume_unit)? <FoodJunkie::SyntaxNodes::Volume>
       end
 
       rule portion_volume
-        alphabetical_number space portion_unit <FoodJunkie::SyntaxNode::Volume>
+        alphabetical_number space portion_unit <FoodJunkie::SyntaxNodes::Volume>
         /
-        number_literal space? portion_unit <FoodJunkie::SyntaxNode::Volume>
+        number_literal space? portion_unit <FoodJunkie::SyntaxNodes::Volume>
       end
 
       rule compound

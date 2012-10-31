@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 module FoodJunkie
-  class SyntaxNode::CookStep; end
-  class SyntaxNode::Temperature; end
-  class SyntaxNode::Time; end
+  class SyntaxNodes::CookStep; end
+  class SyntaxNodes::Temperature; end
+  class SyntaxNodes::Time; end
 end
 
 describe FoodJunkie::Parsers::CookStepsParser do

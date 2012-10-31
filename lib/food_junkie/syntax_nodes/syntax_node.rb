@@ -1,5 +1,5 @@
 module FoodJunkie
-  module SyntaxNode
+  module SyntaxNodes
     class Base < Treetop::Runtime::SyntaxNode
 
       def children(klass)

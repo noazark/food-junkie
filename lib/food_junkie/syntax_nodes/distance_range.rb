@@ -1,5 +1,5 @@
 module FoodJunkie
-  module SyntaxNode
+  module SyntaxNodes
     class DistanceRange < Base
     end
   end

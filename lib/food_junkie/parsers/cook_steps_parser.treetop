@@ -10,7 +10,7 @@ module FoodJunkie
       end
 
       rule preheat
-        'pre'? 'heat' (space 'the')? space word space preposition space temperature <FoodJunkie::SyntaxNode::CookStep>
+        'pre'? 'heat' (space 'the')? space word space preposition space temperature <FoodJunkie::SyntaxNodes::CookStep>
       end
 
       rule utensil
@@ -18,7 +18,7 @@ module FoodJunkie
       end
 
       rule cook
-        (word space preposition space)? temperature space conjunction space time <FoodJunkie::SyntaxNode::CookStep>
+        (word space preposition space)? temperature space conjunction space time <FoodJunkie::SyntaxNodes::CookStep>
       end
 
       rule serving_size

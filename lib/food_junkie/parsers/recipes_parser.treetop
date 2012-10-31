@@ -6,15 +6,15 @@ module FoodJunkie
       include Ingredients
 
       rule recipe
-        paragraph* <FoodJunkie::SyntaxNode::Recipe>
+        paragraph* <FoodJunkie::SyntaxNodes::Recipe>
       end
 
       rule paragraph
-        step (line_break+ / !.) <FoodJunkie::SyntaxNode::Paragraph>
+        step (line_break+ / !.) <FoodJunkie::SyntaxNodes::Paragraph>
       end
 
       rule step
-        ( cook_step / non_definitive_measurement / time / ingredient / number / word / punctuation / space )+ <FoodJunkie::SyntaxNode::Step>
+        ( cook_step / non_definitive_measurement / time / ingredient / number / word / punctuation / space )+ <FoodJunkie::SyntaxNodes::Step>
       end
 
     end

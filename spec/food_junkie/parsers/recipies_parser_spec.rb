@@ -27,19 +27,19 @@ describe FoodJunkie::Parsers::RecipesParser do
 
   it "should break a recipe into paragraphs" do
     parse(@recipe).elements.count do |el|
-      el.class == FoodJunkie::SyntaxNode::Paragraph
+      el.class == FoodJunkie::SyntaxNodes::Paragraph
     end.should eq 5
   end
 
   it "should find all the cook steps in a step" do
     parse(@step, root: 'step').elements.count do |el|
-      el.class == FoodJunkie::SyntaxNode::CookStep
+      el.class == FoodJunkie::SyntaxNodes::CookStep
     end.should eq 1
   end
 
   it "should find all the ingredients in a step" do
     parse(@step, root: 'step').elements.count do |el|
-      el.class == FoodJunkie::SyntaxNode::Ingredient
+      el.class == FoodJunkie::SyntaxNodes::Ingredient
     end.should eq 3
   end
 

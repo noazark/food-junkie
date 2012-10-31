@@ -4,7 +4,7 @@ module FoodJunkie
       include Primitives
 
       rule unit
-        portion_unit / ( distance_unit / temperature_unit / time_unit / volume_unit )* <FoodJunkie::SyntaxNode::Unit>
+        portion_unit / ( distance_unit / temperature_unit / time_unit / volume_unit )* <FoodJunkie::SyntaxNodes::Unit>
       end
 
       ##################
