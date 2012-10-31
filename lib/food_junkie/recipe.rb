@@ -9,9 +9,7 @@ module FoodJunkie
       end
     end
 
-    def syntax_node
-      @syntax_node
-    end
+    attr_reader :syntax_node
 
     def steps
       syntax_node.steps.map do |step|
