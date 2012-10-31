@@ -24,6 +24,7 @@ require "food_junkie/parsers/ingredients_parser"
 require "food_junkie/parsers/recipes_parser"
 
 require 'food_junkie/parser'
+require 'food_junkie/recipe'
 
 require "food_junkie/version"
 
