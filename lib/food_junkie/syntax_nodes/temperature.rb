@@ -1,4 +1,6 @@
 module FoodJunkie
-  class Temperature < SyntaxNode
+  module SyntaxNodes
+    class Temperature < Base
+    end
   end
 end

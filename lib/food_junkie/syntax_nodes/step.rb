@@ -1,4 +1,13 @@
 module FoodJunkie
-  class Step < SyntaxNode
+  module SyntaxNodes
+    class Step < Base
+      def ingredients
+        children(Ingredient)
+      end
+
+      def times
+        children(Time)
+      end
+    end
   end
 end

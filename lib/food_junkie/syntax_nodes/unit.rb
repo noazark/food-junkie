@@ -1,4 +1,6 @@
 module FoodJunkie
-  class Unit < SyntaxNode
+  module SyntaxNodes
+    class Unit < Base
+    end
   end
 end
