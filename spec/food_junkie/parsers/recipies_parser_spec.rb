@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe FoodJunkie::RecipesParser do
+describe FoodJunkie::Parsers::RecipesParser do
   before :all do
-    @parser = FoodJunkie::RecipesParser.new
+    @parser = FoodJunkie::Parsers::RecipesParser.new
 
     @recipe = "Preheat oven to 350 degrees. Lightly grease a baking dish.
       
@@ -27,19 +27,19 @@ describe FoodJunkie::RecipesParser do
 
   it "should break a recipe into paragraphs" do
     parse(@recipe).elements.count do |el|
-      el.class == FoodJunkie::Paragraph
+      el.class == FoodJunkie::SyntaxNode::Paragraph
     end.should eq 5
   end
 
   it "should find all the cook steps in a step" do
     parse(@step, root: 'step').elements.count do |el|
-      el.class == FoodJunkie::CookStep
+      el.class == FoodJunkie::SyntaxNode::CookStep
     end.should eq 1
   end
 
   it "should find all the ingredients in a step" do
     parse(@step, root: 'step').elements.count do |el|
-      el.class == FoodJunkie::Ingredient
+      el.class == FoodJunkie::SyntaxNode::Ingredient
     end.should eq 3
   end
 

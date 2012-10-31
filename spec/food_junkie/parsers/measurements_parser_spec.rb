@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe FoodJunkie::MeasurementsParser do
+describe FoodJunkie::Parsers::MeasurementsParser do
   before :all do
-    @parser = FoodJunkie::MeasurementsParser.new
+    @parser = FoodJunkie::Parsers::MeasurementsParser.new
   end
   
   def parse(string, *args)
