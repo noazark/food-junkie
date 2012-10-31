@@ -18,5 +18,9 @@ module FoodJunkie
     def substance
       @syntax_node.substance.to_s
     end
+
+    def to_s
+      @syntax_node.to_s
+    end
   end
 end

@@ -28,5 +28,9 @@ module FoodJunkie
         total += time.to_i
       end
     end
+
+    def to_s
+      @syntax_node.to_s
+    end
   end
 end

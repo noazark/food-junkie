@@ -24,4 +24,8 @@ describe FoodJunkie::Ingredient do
   it "contains a substance" do
     ingredient.substance.should eq "flour"
   end
+
+  it "to_strings itself" do
+    ingredient.to_s.should eq ingredient_string
+  end
 end

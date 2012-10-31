@@ -45,4 +45,8 @@ describe FoodJunkie::Recipe do
     recipe.total_time.should eq 30 * 60
   end
 
+  it "to_strings itself" do
+    recipe.to_s.should eq recipe_string
+  end
+
 end

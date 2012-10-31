@@ -3,9 +3,7 @@ require 'spec_helper'
 describe FoodJunkie::Step do
 
   let(:step_string) do
-    <<-END_RECIPE
-      3 eggs for 5 minutes.
-    END_RECIPE
+    "3 eggs for 5 minutes."
   end
 
   let(:step) do
@@ -31,6 +29,10 @@ describe FoodJunkie::Step do
 
   it "summarizes the step's total cook and prep time" do
     step.total_time.should eq 5 * 60
+  end
+
+  it "to_strings itself" do
+    step.to_s.should eq step_string
   end
 
 end
