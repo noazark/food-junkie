@@ -9,7 +9,7 @@ module FoodJunkie
     end
 
     def ingredients
-      @parser.children(FoodJunkie::SyntaxNodes::Ingredients)
+      @parser.children(FoodJunkie::SyntaxNodes::Ingredient)
     end
 
     def total_time

@@ -15,7 +15,7 @@ describe FoodJunkie::Recipe do
   end
 
   it "extrapolates ingredients" do
-    recipe.steps.count.should eq 2
+    recipe.ingredients.count.should eq 2
   end
 
   it "summarizes the recipe's total cook and prep time" do
